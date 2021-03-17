@@ -4,20 +4,18 @@ import axios from 'axios';
 class CreatePost extends Component {
     state = {
         text:"",
-        image: ""
     }
 
     handleFormSubmit = (event) => {
-        
-        console.log(event.currentUser, "event")
-
         event.preventDefault();
 
         const {text, image} = this.state;
 
-        axios.post('http://localhost:5000/api/post', { text, image } )
+        axios.post('http://localhost:5000/api/post',  { text, image }, {withCredentials: true} )
         .then(() => {
             console.log("request sent")
+            this.props.getAllSecret();
+
             this.setState( { text:"", image:"" } )
         })
         .catch( (err) => console.log(err))
@@ -37,12 +35,13 @@ class CreatePost extends Component {
             <div>
                 <form onSubmit= {this.handleFormSubmit}>
                     <label> Post</label>
-                    <textarea type="text" name="text" 
+                    <textarea type="text" 
+                    name="text"
                     onChange={this.handleInput} 
                     value= {this.state.text} />
-
                     <button type="submit">Send text</button>
                 </form>
+                
             </div>
         )
     }

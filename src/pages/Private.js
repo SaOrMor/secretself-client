@@ -6,7 +6,7 @@ class Private extends Component {
   
   render() {
 
-    console.log("user", this.props.user)
+    console.log("this.props", this.props)
     return (
       <div>
         <h1>Private Route</h1>

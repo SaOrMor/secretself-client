@@ -10,8 +10,6 @@ class Signup extends Component {
     const { email, password } = this.state;
     
     this.props.signup( email, password );
-    console.log(this.state, "this.state")
-    console.log(this.props.signup.email, "this.props")
   };
 
   handleChange = event => {
@@ -20,6 +18,7 @@ class Signup extends Component {
   };
 
   render() {
+    console.log("this.props", this.props)
     const { email, password } = this.state;
     return (
       <div>

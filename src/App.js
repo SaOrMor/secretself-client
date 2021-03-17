@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Private from './pages/Private';
+import PostDetails from './pages/PostDetails';
 
 import AnonRoute from './components/AnonRoute';
 import PrivateRoute from './components/PrivateRoute';
@@ -21,7 +22,7 @@ class App extends Component {
 
         <Switch>
           <Route exact path="/" component={Home} />
-
+          <Route exact path="/api/post/:id" component={PostDetails} />
 
           <AnonRoute exact path="/signup" component={Signup} />
           <AnonRoute exact path="/login" component={Login} />
