@@ -1,6 +1,46 @@
-.sqaure {
-    height: 100px;
-    width: 100px;
-    background-color: rgb(255, 17, 0);
-    border:black solid 5px;
+*, *::before, *::after { box-sizing: border-box}
+
+
+.post-cont{
+    display: grid;
+    grid-template-columns: repeat(4, 20vw);
+    grid-gap: 20px;
+    justify-content: center;
+    align-content: center;
+    height: -10vh;
+    margin-top: 150px;
 }
+
+
+.post-cont:before{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position:absolute;
+    content: '';
+    background-image: url("./../images/hero-light.webp");
+    z-index: 0;
+    background-size: cover;
+}
+
+.square{
+    position: relative;
+    width: 20vw;
+    height: auto;
+    border-radius: 2%;
+    border-top: #26c0dd 30px solid;
+    padding: 18px;
+    background: #f9f9f9;
+}
+
+
+.secret-message{
+    line-height: 25px;
+    color: rgb(57 57 57);
+}
+
+.wholePage{
+    position: relative;
+}
+

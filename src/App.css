@@ -1,3 +1,5 @@
+*, *::before, *::after { box-sizing: border-box}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -10,17 +12,23 @@ html, body {
 nav.navbar { 
   display: flex;
   padding: 0px 20px;
-  background: #686de0; 
+  background: #f8fafa; 
 }
 
 button.navbar-button {
   padding: 5px 20px;
   width: 100px;
-  margin: 15px 10px;
+  margin: 15px 1650px;
   border-radius: 3px;
 }
 
 #home-btn {
-  color: white;
+  color: rgb(10, 0, 0);
   text-decoration: none;
+  padding: 0px 5px;
+}
+
+.logo{
+  width: 50px;
+  height: 50px;
 }

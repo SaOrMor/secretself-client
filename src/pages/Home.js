@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Home.css';
 import CreatePost from '../components/CreatePost';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import {withAuth} from './../context/auth-context';
 
 
@@ -23,27 +23,32 @@ class Home extends Component {
     this.getAllSecret()
   }
 
+  // style={{width:150, height: 150, backgroundColor: 'azure', position: "relative"}} key={post._id}
+
   render() {
-    
-    console.log("this.props", this.props)
 
     return (
+      <div className="wholePage">
+        <CreatePost getAllSecret={this.getAllSecret}/>
       <div>
-          <CreatePost getAllSecret={this.getAllSecret}/>
-      <div>
-
+      
 
       </div>
+
+      <div className="post-cont">
       {this.state.listOfSecrets.map( (post) => {
         return(
-          <div style={{width:150, height: 150, backgroundColor: 'azure', position: "relative"}} key={post._id}>
+          
+          <div className="square">
 
-          <Link to={"/api/post/" + post._id}>
+          
 
-          <p> {post.text}</p>
+          <p className="secret-message"> {post.text}</p>
 
+          <NavLink to={"/api/post/" + post._id}>
+          
           <button> Comment</button>
-          </Link>
+          </NavLink>
 
       
           </div>
@@ -52,7 +57,8 @@ class Home extends Component {
         
       })}
 
-     
+      </div>
+
       </div>
     )
   }

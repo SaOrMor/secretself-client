@@ -1,0 +1,6 @@
+.createPost{
+    position: relative;
+    z-index: 1;
+    background-image: url('./../images/hero-background-light.webp');
+    height: 200px;
+}

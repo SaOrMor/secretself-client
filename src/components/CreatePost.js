@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './CreatePost.css';
 
 class CreatePost extends Component {
     state = {
@@ -13,7 +14,6 @@ class CreatePost extends Component {
 
         axios.post('http://localhost:5000/api/post',  { text, image }, {withCredentials: true} )
         .then(() => {
-            console.log("request sent")
             this.props.getAllSecret();
 
             this.setState( { text:"", image:"" } )
@@ -32,7 +32,7 @@ class CreatePost extends Component {
 
     render() {
         return (
-            <div>
+            <div className="createPost">
                 <form onSubmit= {this.handleFormSubmit}>
                     <label> Post</label>
                     <textarea type="text" 

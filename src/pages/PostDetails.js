@@ -76,19 +76,17 @@ class PostDetails extends Component {
 
 
       handleEditSubmit = (e) => {
-        
         e.preventDefault()
+
         const postId = this.props.match.params.id;
-        const text = this.state.post.text;
-        const editText = this.state.post.editText;
-        console.log("event", e.target)
-        axios.put(`http://localhost:5000/api/post/${postId}`, {text},
+
+        const {value} = e.target.querySelector('input')
+
+        axios.put(`http://localhost:5000/api/post/${postId}`, {text:value},
         {withCredentials: true} )
         .then( (response) => {
             
-           this.setState( {text: editText} )
-
-           console.log("response", response)
+           this.setState( {post: response.data, showForm:true } )
 
         }).catch( (err) => {
             console.log(err)

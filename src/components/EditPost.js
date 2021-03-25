@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 class editPost extends Component {
     state = {
-        text:"",
+        text: this.props.text,
     }
 
      /*  handleEditSubmit = () => {
@@ -22,6 +22,15 @@ class editPost extends Component {
         })
     } */
 
+    handleInput = (e) => {
+
+        const {name, value} = e.target;
+
+        console.log("name",name)
+        console.log("value",value)
+
+        this.setState( { [name]: value } );
+    }
 
     render() {
         return (
@@ -29,9 +38,10 @@ class editPost extends Component {
                 
                 <form onSubmit={this.props.handleEditSubmit}>
 
-                <input defaultValue={this.props.text} 
-                name={this.props.editText} type="text"
-                
+                <input 
+                value = {this.state.text}
+                name="text" type="text"
+                onChange = {this.handleInput}
                  />
                 
                 <button type="submit"> submit changes </button>

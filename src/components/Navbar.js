@@ -8,12 +8,12 @@ class Navbar extends Component {
     return (
       <nav className="navbar">
         <Link to={'/'} id='home-btn'>
-          <h4>Home</h4>
+          <img className="logo" src="https://insegreto.com/svg/new-logo.svg" alt= "logo" />
         </Link>
         {this.props.isLoggedIn ? (
           <>
-            <p>email: {this.props.user && this.props.user.email}</p>
-            <button onClick={this.props.logout}>Logout</button>
+           { /* <p>email: {this.props.user && this.props.user.email}</p>  */ }
+            <button className="navbar-button" onClick={this.props.logout}>Logout</button>
           </>
         ) : (
           <>
