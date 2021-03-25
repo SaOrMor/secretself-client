@@ -20,6 +20,10 @@ class Home extends Component {
     .catch( (err) => console.log(err));
   }
 
+  showForm = () => {
+    this.setState( { showCreatePost: !this.state.showCreatePost} )
+  }
+
   componentDidMount() {
     this.getAllSecret()
   }
@@ -36,26 +40,23 @@ class Home extends Component {
       { this.state.showCreatePost ?
 
       <div className="wholePage">
-        <CreatePost getAllSecret={this.getAllSecret}/>
+        <CreatePost getAllSecret={this.getAllSecret} showForm={this.showForm}/>
       </div>
 
-      : <span className="moreButton"> + </span>}
+      : <button onClick={this.showForm} className="moreButton"> + </button>}
 
-
-
+        
       </div>
 
-      
-      
-      
+      <h3 className="paragraph"> Tell your secret to everyOne and tell them to no one.</h3>
 
       <div className="post-cont">
+      
       {this.state.listOfSecrets.map( (post) => {
         return(
           
-          <div className="square">
-
           
+          <div className="square">
 
           <p className="secret-message"> {post.text}</p>
 
@@ -71,9 +72,11 @@ class Home extends Component {
         
       })}
 
+      
       </div>
 
-     
+      
+
 
       </div>
     )

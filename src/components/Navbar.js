@@ -9,7 +9,10 @@ class Navbar extends Component {
       <nav className="navbar">
         <Link to={'/'} id='home-btn'>
           <img className="logo" src="https://insegreto.com/svg/new-logo.svg" alt= "logo" />
-        </Link>
+        </Link> 
+
+        <h1 className="secretSelf"> Your Secret Self</h1>
+
         {this.props.isLoggedIn ? (
           <>
            { /* <p>email: {this.props.user && this.props.user.email}</p>  */ }

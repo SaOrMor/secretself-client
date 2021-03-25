@@ -57,7 +57,21 @@
 }
 
 .moreButton{
-    height: 50px;
-    margin-left: 250px;
-    
+    font-size: 48px;
+    position: absolute;
+    left: 900px;
+    top: 65px;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 100%;
+    border: 5px solid;
+    border-color: rgb(228, 51, 51) rgb(228, 51, 51) rgb(97, 202, 216) rgb(97, 202, 216);
+}
+
+.paragraph{
+    position:absolute;
+    z-index: 1;
+    left: 42%;
+    top: 31%;
+
 }

@@ -16,6 +16,8 @@ class CreatePost extends Component {
         .then(() => {
             this.props.getAllSecret();
 
+            this.props.showForm();
+
             this.setState( { text:"", image:"" } )
         })
         .catch( (err) => console.log(err))
@@ -34,7 +36,7 @@ class CreatePost extends Component {
         return (
             <div className="createPost">
                 <form className="postForm" onSubmit= {this.handleFormSubmit}>
-                    <label> Post</label>
+                    
                     <textarea type="text" 
                     name="text"
                     onChange={this.handleInput} 
