@@ -33,7 +33,7 @@ class CreatePost extends Component {
     render() {
         return (
             <div className="createPost">
-                <form onSubmit= {this.handleFormSubmit}>
+                <form className="postForm" onSubmit= {this.handleFormSubmit}>
                     <label> Post</label>
                     <textarea type="text" 
                     name="text"

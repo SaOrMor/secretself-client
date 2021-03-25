@@ -12,7 +12,9 @@ html, body {
 nav.navbar { 
   display: flex;
   padding: 0px 20px;
-  background: #f8fafa; 
+  background: #f8fafa;
+  position: relative;
+  z-index: 1;
 }
 
 button.navbar-button {

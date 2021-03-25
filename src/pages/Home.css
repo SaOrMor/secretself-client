@@ -17,11 +17,12 @@
     bottom: 0;
     left: 0;
     right: 0;
-    position:absolute;
+    position:fixed;
     content: '';
     background-image: url("./../images/hero-light.webp");
     z-index: 0;
     background-size: cover;
+    height: 100vh;
 }
 
 .square{
@@ -44,3 +45,19 @@
     position: relative;
 }
 
+.postForm{
+    margin-left: 740px;
+}
+
+.coloredBack{
+    position: relative;
+    z-index: 1;
+    background-image: url('./../images/hero-background-light.webp');
+    height: 200px;
+}
+
+.moreButton{
+    height: 50px;
+    margin-left: 250px;
+    
+}

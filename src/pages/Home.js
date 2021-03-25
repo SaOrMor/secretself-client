@@ -8,7 +8,8 @@ import {withAuth} from './../context/auth-context';
 
 class Home extends Component {
   state = {
-    listOfSecrets: []
+    listOfSecrets: [],
+    showCreatePost: false
   }
 
   getAllSecret = () => {
@@ -28,12 +29,25 @@ class Home extends Component {
   render() {
 
     return (
+
+<div>
+      <div className="coloredBack">
+
+      { this.state.showCreatePost ?
+
       <div className="wholePage">
         <CreatePost getAllSecret={this.getAllSecret}/>
-      <div>
-      
+      </div>
+
+      : <span className="moreButton"> + </span>}
+
+
 
       </div>
+
+      
+      
+      
 
       <div className="post-cont">
       {this.state.listOfSecrets.map( (post) => {
@@ -58,6 +72,8 @@ class Home extends Component {
       })}
 
       </div>
+
+     
 
       </div>
     )
