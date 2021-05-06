@@ -48,7 +48,7 @@ class Home extends Component {
         
       </div>
 
-      <h3 className="paragraph"> Tell your secret to everyOne and tell them to no one.</h3>
+      <h3 className="paragraph"> Tell your secret to everyOne and to no one.</h3>
 
       <div className="post-cont">
       

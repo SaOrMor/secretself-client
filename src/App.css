@@ -21,7 +21,16 @@ button.navbar-button {
   padding: 5px 20px;
   width: 100px;
   margin: 15px 1650px;
-  border-radius: 3px;
+  border-radius: 14px;
+  display:inline-block;
+  border:0.1em solid #f72905;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#f37272;
+  text-align:center;
+  transition: all 0.2s;
 }
 
 #home-btn {
@@ -38,4 +47,13 @@ button.navbar-button {
 .secretSelf{
   position: absolute;
   left: 850px;
+}
+
+footer.footer{
+  display: flex;
+  padding: 50px;
+  background: #f8fafa;
+  position: relative;
+  z-index: 1;
+  text-align: center;
 }
