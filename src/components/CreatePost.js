@@ -37,11 +37,12 @@ class CreatePost extends Component {
             <div className="createPost">
                 <form className="postForm" onSubmit= {this.handleFormSubmit}>
                     
-                    <textarea type="text" 
+                    <textarea className="areaCre" type="text" 
                     name="text"
+                    placeholder="What you have in mind?"
                     onChange={this.handleInput} 
                     value= {this.state.text} />
-                    <button type="submit">Send text</button>
+                    <button className="subBut" type="submit">Send text</button>
                 </form>
                 
             </div>

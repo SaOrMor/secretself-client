@@ -52,7 +52,7 @@ class Home extends Component {
 
       <div className="post-cont">
       
-      {this.state.listOfSecrets.map( (post) => {
+      {this.state.listOfSecrets.reverse().map( (post) => {
         return(
           
           
@@ -62,7 +62,7 @@ class Home extends Component {
 
           <NavLink to={"/api/post/" + post._id}>
           
-          <button> Comment</button>
+          <button className="commButt"> Comment</button>
           </NavLink>
 
       

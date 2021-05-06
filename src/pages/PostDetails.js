@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {withAuth} from './../context/auth-context';
 import EditPost from '../components/EditPost';
+import './PostDetails.css';
 
 class PostDetails extends Component {
     state = {
@@ -96,10 +97,10 @@ class PostDetails extends Component {
     
     render() {        
         return (
-            <div>
+            <div className="postDetails">
                        
                 {  this.state.showForm ? 
-                   <h2> {this.state.post.text}</h2> 
+                   <h2 style={{color: "rgb(106, 90, 205)"}}> {this.state.post.text}</h2> 
                     :
                     <EditPost text={this.state.post.text} 
                     handleEditSubmit={this.handleEditSubmit}
@@ -110,11 +111,14 @@ class PostDetails extends Component {
 
 
                 <div>
+                
                     {this.state.post.comments && this.state.post.comments.map( (comments) => {
+                        
                         return(
+                            
                             <div key={comments._id}>
 
-                        <p>{comments.cText}</p>
+                        <h4 style={{color: "rgb(255, 165, 0)"}}>{comments.cText}</h4>
 
                         </div>
                         )
@@ -129,14 +133,14 @@ class PostDetails extends Component {
                     this.props.user._id === this.state.post.user
 
                     ?
-                    <div>
+                    <div className="delEdit">
 
-                    <button onClick={this.deletePost}>
+                    <button className="deleteButt" onClick={this.deletePost}>
                     Delete post</button>
 
-                    <button onClick = {this.toggleForm}>
-                    
+                    <button className="buttComm" onClick = {this.toggleForm}>
                     edit post </button>
+
                     </div>
 
 
@@ -148,13 +152,14 @@ class PostDetails extends Component {
                 
 
 
-                <form>
+                <form className="formComm">
 
                 <textarea type="text" 
+                placeholder="Remember, be nice!"
                 name ="cText" 
                 onChange={this.handleChange} 
                 value = {this.state.cText}/>
-                <button onClick={this.commentPost}> Comment </button>
+                <button className="buttComm" onClick={this.commentPost}> Comment </button>
 
                 </form>
                 
