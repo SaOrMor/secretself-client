@@ -14,9 +14,9 @@ class PostDetails extends Component {
 
     getComments = () => {
 
-        const postId = this.props.match.params.id
+        const postId = this.props.match.params.id 
 
-        axios.get(`http://localhost:5000/api/post/${postId}`, {withCredentials: true})
+        axios.get(`${process.env.REACT_APP_API_URL}/api/post/${postId}`, {withCredentials: true})
 
         .then((response) => {
             this.setState({ post: response.data})
@@ -35,7 +35,7 @@ class PostDetails extends Component {
 
     deletePost = () => {
         const postId = this.props.match.params.id;
-        axios.delete(`http://localhost:5000/api/post/${postId}`, {withCredentials: true})
+        axios.delete(`${process.env.REACT_APP_API_URL}/api/post/${postId}`, {withCredentials: true})
         .then((response) => {
             console.log("post deleted response", this.props)
             this.props.history.goBack()
@@ -53,16 +53,17 @@ class PostDetails extends Component {
     }
 
 
-    commentPost = () => {
+    commentPost = (e) => {
+        e.preventDefault()
         const postId = this.props.match.params.id;
         const cText = this.state.cText;
 
-        axios.post(`http://localhost:5000/api/post/${postId}/comment`, {cText},
+        axios.post(`${process.env.REACT_APP_API_URL}/api/post/comments/${postId}`, {cText},
         
         {withCredentials: true} )
 
         .then( () => {
-            this.getComments()
+            this.getComments();
             console.log("comments request sent")
 
             this.setState( {cText: ""})
@@ -83,7 +84,7 @@ class PostDetails extends Component {
 
         const {value} = e.target.querySelector('input')
 
-        axios.put(`http://localhost:5000/api/post/${postId}`, {text:value},
+        axios.put(`${process.env.REACT_APP_API_URL}/api/post/${postId}`, {text:value},
         {withCredentials: true} )
         .then( (response) => {
             
@@ -152,14 +153,14 @@ class PostDetails extends Component {
                 
 
 
-                <form className="formComm">
+                <form className="formComm" onSubmit={this.commentPost}>
 
                 <textarea type="text" 
                 placeholder="Remember, be nice!"
                 name ="cText" 
                 onChange={this.handleChange} 
                 value = {this.state.cText}/>
-                <button className="buttComm" onClick={this.commentPost}> Comment </button>
+                <button className="buttComm" type="submit"> Comment </button>
 
                 </form>
                 

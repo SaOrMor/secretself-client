@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Home.css';
 import CreatePost from '../components/CreatePost';
 import axios from 'axios';
-import {Link, NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import {withAuth} from './../context/auth-context';
 
 
@@ -13,7 +13,7 @@ class Home extends Component {
   }
 
   getAllSecret = () => {
-    axios.get('http://localhost:5000/api/post')
+    axios.get(`${process.env.REACT_APP_API_URL}/api/post`)
     .then( (response) => {
       this.setState({ listOfSecrets: response.data })
     })

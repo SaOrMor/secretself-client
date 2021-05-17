@@ -20,10 +20,7 @@ class Navbar extends Component {
           </>
         ) : (
           <>
-            <Link to="/login">
-              <button className="navbar-button">Login</button>{' '}
-            </Link>
-            <br />
+            
             <Link to="/signup">
               <button className="navbar-button">Sign Up</button>{' '}
             </Link>

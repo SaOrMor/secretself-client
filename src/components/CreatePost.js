@@ -10,9 +10,9 @@ class CreatePost extends Component {
     handleFormSubmit = (event) => {
         event.preventDefault();
 
-        const {text, image} = this.state;
+        const {text} = this.state;
 
-        axios.post('http://localhost:5000/api/post',  { text, image }, {withCredentials: true} )
+        axios.post(`${process.env.REACT_APP_API_URL}/api/post`,  { text }, {withCredentials: true} )
         .then(() => {
             this.props.getAllSecret();
 
