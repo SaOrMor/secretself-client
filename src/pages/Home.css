@@ -125,3 +125,82 @@
     top: 0;
     border-radius: 10px;
 }
+
+@media (max-width: 450px) {
+  
+    .post-cont{
+        display: grid;
+        grid-template-columns: repeat(3, 20vw);
+        grid-gap: 30px;
+        justify-content: center;
+        align-content: center;
+        height: -10vh;
+        margin-top: 80px;
+    }
+
+    .post-cont:before{
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position:absolute;
+        content: '';
+        background-image: url("./../images/hero-light.webp");
+        z-index: 0;
+        background-size: cover;
+        height: auto;
+    }
+
+    .coloredBack{
+        position: relative;
+        z-index: 1;
+        background-image: url('./../images/hero-background-light.webp');
+        height: 100px;
+    }
+
+
+    .paragraph{
+        position:relative;
+        z-index: 1;
+        left: 12%;
+        top: 10%;
+    
+    }
+
+    .commButt{
+        width: 66px;
+        height: 24px;
+        border: none;
+        outline: none;
+        color: #fff;
+        background: #111;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 15px;;
+    }
+
+    .square{
+        position: relative;
+        width: 25vw;
+        height: auto;
+        border-radius: 2%;
+        border-top: #26c0dd 30px solid;
+        padding: 10px;
+        background: #f9f9f9;
+    }
+
+    .moreButton{
+        font-size: 37px;
+        position: relative;
+        left: 190px;
+        top: 10px;
+        background-color: white;
+        padding: 8px 20px;
+        border-radius: 100%;
+        border: 5px solid;
+        border-color: rgb(228, 51, 51) rgb(228, 51, 51) rgb(97, 202, 216) rgb(97, 202, 216);
+    }
+
+
+}

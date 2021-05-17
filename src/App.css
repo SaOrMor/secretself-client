@@ -57,3 +57,40 @@ footer.footer{
   z-index: 1;
   text-align: center;
 }
+
+@media (max-width: 450px) {
+
+  nav.navbar { 
+    display: flex;
+    padding: 0px 20px;
+    background: #f8fafa;
+    position: relative;
+    z-index: 1;
+
+  }
+
+  .secretSelf{
+    position: absolute;
+    left: 150px;
+  }
+
+  button.navbar-button {
+    padding: 4px 10px;
+    width: 70px;
+    margin: 15px 270px;
+    border-radius: 14px;
+    display:inline-block;
+    border:0.1em solid #f72905;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#f37272;
+    text-align:center;
+    transition: all 0.2s;
+    
+  }
+
+
+
+}
